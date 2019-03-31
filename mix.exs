@@ -24,8 +24,8 @@ defmodule HereMaps.Mixfile do
 
   defp deps do
     [
-      {:poison, "> 3.0"},
-      {:httpoison, "~> 0.13"},
+      {:poison, "~> 3.1"},
+      {:httpoison, "~> 1.5.0"},
       {:ex_doc, "~> 0.16", only: :dev, runtime: false}
     ]
   end
