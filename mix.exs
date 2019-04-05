@@ -5,7 +5,7 @@ defmodule HereMaps.Mixfile do
 
   def project do
     [
-      app: :ex_heremaps,
+      app: :here_maps,
       description: "Here Maps API wrapper in Elixir",
       version: @version,
       elixir: "~> 1.7",
