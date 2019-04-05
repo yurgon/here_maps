@@ -3,9 +3,9 @@ defmodule HereMaps.Request do
   
   use HTTPoison.Base
 
-  def get(endpoint, params) do
+  def send(endpoint, params, headers) do
     query_params = Map.merge(credentials(), params) |> URI.encode_query
-    get("#{endpoint}?#{query_params}", [], [])
+    get("#{endpoint}?#{query_params}", headers, [])
   end
 
   defp credentials do

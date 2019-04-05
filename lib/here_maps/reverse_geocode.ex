@@ -6,7 +6,7 @@ defmodule HereMaps.ReverseGeocode do
   @base_url "https://reverse.geocoder.cit.api.here.com/6.2/reversegeocode.json"
 
   def call(location, params \\ %{}) do
-    case Request.get(@base_url, reverse_geocode_params(location, params)) do
+    case Request.send(@base_url, reverse_geocode_params(location, params)) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
         body = body |> Poison.Parser.parse!
         result = body |> Map.get("Response") |> Map.get("View") |> Enum.at(0) |> Map.get("Result")
