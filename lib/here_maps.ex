@@ -3,12 +3,12 @@ defmodule HereMaps do
   
   alias HereMaps.{Geocode, ReverseGeocode, Places}
 
-  def geocode(query, params \\ %{}) do
-    Geocode.call(query, params)
+  def geocode(query, params \\ %{}, headers \\ []) do
+    Geocode.call(query, params, headers)
   end
 
-  def reverse_geocode(location, params \\ %{}) do
-    ReverseGeocode.call(location, params)
+  def reverse_geocode(location, params \\ %{}, headers \\ []) do
+    ReverseGeocode.call(location, params, headers)
   end
 
   def place_category_at(at, params \\ %{}, headers \\ []) do
